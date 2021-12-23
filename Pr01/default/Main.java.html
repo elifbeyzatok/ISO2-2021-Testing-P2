@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pr01$TestSuit.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">
+<span class="nc" id="L2">public class Main {</span>
+	
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+
+
+<span class="nc" id="L8">		HealthConditions hc= new HealthConditions();</span>
+
+<span class="nc" id="L10">		hc.ill=false;</span>
+<span class="nc" id="L11">		hc.contactedWithInfectedPerson=false;</span>
+<span class="nc" id="L12">		hc.contactedWithSuspectedSymptoms=false;</span>
+<span class="nc" id="L13">		hc.hasCovidPassport=true;</span>
+<span class="nc" id="L14">		hc.checkboard();</span>
+
+
+<span class="nc" id="L17">		reductionOfSeats ( 300 ); //Enter the amount of covid cases as parameters here !!</span>
+<span class="nc" id="L18">		reservedPlacesForPWEP(300); //Enter the amount of covid cases as parameters here !!</span>
+<span class="nc" id="L19">		calculateTicketPrice(3);//Enter the level which is it. Please write 1,2,3 or 4!!</span>
+<span class="nc" id="L20">	}</span>
+
+
+	int amountOfCases; //amount of covid cases
+
+	public static int  reductionOfSeats ( int amountOfCases  ) {
+<span class="nc bnc" id="L26" title="All 2 branches missed.">		if( amountOfCases &lt; 100) {</span>
+<span class="nc" id="L27">			System.out.println(&quot;Level 0 = there will be no space restrictions&quot;);</span>
+<span class="nc bnc" id="L28" title="All 4 branches missed.">		}else if( amountOfCases &gt;= 100 &amp;&amp; amountOfCases &lt; 200) {</span>
+<span class="nc" id="L29">			System.out.println(&quot;Level 1 = capacity of the transport is reduced to 80% &quot;);</span>
+<span class="nc bnc" id="L30" title="All 4 branches missed.">		}else if( amountOfCases &gt;= 200 &amp;&amp; amountOfCases &lt; 300) {</span>
+<span class="nc" id="L31">			System.out.println(&quot;Level 2 = capacity of the transport is reduced to 60% &quot;);			</span>
+<span class="nc bnc" id="L32" title="All 4 branches missed.">		}else if( amountOfCases &gt;= 300 &amp;&amp; amountOfCases &lt; 500) {</span>
+<span class="nc" id="L33">			System.out.println(&quot;Level 3 = capacity of the transport is reduced to 40% &quot;);			</span>
+		}else {
+<span class="nc" id="L35">			System.out.println(&quot;Level 4 = capacity of the transport is reduced to 30% &quot;);</span>
+		}
+
+<span class="nc" id="L38">		return amountOfCases;</span>
+	}
+
+
+
+	// reserved places for 'professionals with essential professions'.       int reservedPlacesForPWEP (PWEP = professionals with essential professions )
+		 public static  int reservedPlacesForPWEP( int amountOfCases ){
+<span class="nc bnc" id="L45" title="All 2 branches missed.">		   if( amountOfCases &lt; 100) {</span>
+<span class="nc" id="L46">				System.out.println(&quot;Level 0 = There is no reserved places for 'professionals with essential professions' . &quot;);</span>
+<span class="nc bnc" id="L47" title="All 4 branches missed.">			}else if( amountOfCases &gt;= 100 &amp;&amp; amountOfCases &lt; 200) {</span>
+<span class="nc" id="L48">				System.out.println(&quot;Level 1 = There is no reserved places for 'professionals with essential professions' &quot;);</span>
+<span class="nc bnc" id="L49" title="All 4 branches missed.">			}else if( amountOfCases &gt;= 200 &amp;&amp; amountOfCases &lt; 300) {</span>
+<span class="nc" id="L50">				System.out.println(&quot;Level 2 = of the possible reduced capacity, 60% of the places are reserved for professionals with essential professions. &quot;);			</span>
+<span class="nc bnc" id="L51" title="All 4 branches missed.">			}else if( amountOfCases &gt;= 300 &amp;&amp; amountOfCases &lt; 500) {</span>
+<span class="nc" id="L52">				System.out.println(&quot;Level 3 = of the possible reduced capacity, 80% of the places are reserved for professionals with essential professions. &quot;);			</span>
+			}else {
+<span class="nc" id="L54">				System.out.println(&quot;Level 4 = of the possible reduced capacity, 90% of the places are reserved for professionals with essential professions. &quot;);</span>
+			}
+
+<span class="nc" id="L57">			return amountOfCases;</span>
+
+
+		 }
+
+
+
+		 int level_n;
+
+		 public static int calculateTicketPrice(int level_n ) {
+
+<span class="nc bnc" id="L68" title="All 2 branches missed.">			 if(level_n == 0) {</span>
+<span class="nc" id="L69">				 System.out.println(&quot;Level 0&quot;);</span>
+<span class="nc" id="L70">				 System.out.println(&quot;* if age&lt;23              -&gt; ticket price discounted 60%   &quot;);</span>
+<span class="nc" id="L71">				 System.out.println(&quot;* if age&gt;=23 and age&lt;=65 -&gt; ticket price didn't change  &quot;);</span>
+<span class="nc" id="L72">				 System.out.println(&quot;* if age&gt;65              -&gt; ticket price discounted 80%   &quot;);</span>
+
+<span class="nc bnc" id="L74" title="All 2 branches missed.">			 }else if(level_n == 1) {</span>
+<span class="nc" id="L75">				 System.out.println(&quot;Level 1&quot;);</span>
+<span class="nc" id="L76">				 System.out.println(&quot;* if age&lt;23              -&gt; ticket price discounted 30%   &quot;);</span>
+<span class="nc" id="L77">				 System.out.println(&quot;* if age&gt;=23 and age&lt;=65 -&gt; ticket price didn't change  &quot;);</span>
+<span class="nc" id="L78">				 System.out.println(&quot;* if age&gt;65              -&gt; ticket price discounted 50%   &quot;);</span>
+
+<span class="nc bnc" id="L80" title="All 2 branches missed.">			 }else if(level_n == 2) {</span>
+<span class="nc" id="L81">				 System.out.println(&quot;Level 2&quot;);</span>
+<span class="nc" id="L82">				 System.out.println(&quot;* if age&lt;23              -&gt; ticket price didn't change    &quot;);</span>
+<span class="nc" id="L83">				 System.out.println(&quot;* if age&gt;=23 and age&lt;=65 -&gt; ticket price didn't change  &quot;);</span>
+<span class="nc" id="L84">				 System.out.println(&quot;* if age&gt;65              -&gt; ticket price increased 20%   &quot;);</span>
+
+<span class="nc bnc" id="L86" title="All 2 branches missed.">			 }else  if(level_n == 3) {</span>
+<span class="nc" id="L87">				 System.out.println(&quot;Level 3&quot;);</span>
+<span class="nc" id="L88">				 System.out.println(&quot;* if age&lt;23              -&gt; ticket price increased 20%    &quot;);</span>
+<span class="nc" id="L89">				 System.out.println(&quot;* if age&gt;=23 and age&lt;=65 -&gt; ticket price didn't change  &quot;);</span>
+<span class="nc" id="L90">				 System.out.println(&quot;* if age&gt;65              -&gt; ticket price increased 50%   &quot;);</span>
+
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			 }else if(level_n == 4) {</span>
+<span class="nc" id="L93">				 System.out.println(&quot;Level 3&quot;);</span>
+<span class="nc" id="L94">				 System.out.println(&quot;* if age&lt;23              -&gt; ticket price increased 30%    &quot;);</span>
+<span class="nc" id="L95">				 System.out.println(&quot;* if age&gt;=23 and age&lt;=65 -&gt; ticket price didn't change  &quot;);</span>
+<span class="nc" id="L96">				 System.out.println(&quot;* if age&gt;65              -&gt; !! will not be allowed to travel !!   &quot;);			  </span>
+			 }else {
+<span class="nc" id="L98">				 System.out.println(&quot;Please enter which level? You should type 1,2,3 or 4.&quot;);</span>
+			 }
+<span class="nc" id="L100">			return level_n;</span>
+
+
+		 }
+
+
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
